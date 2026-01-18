@@ -12,6 +12,9 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 15px 40px;
+ 
+}
+
 }
 
 .nav-logo {
@@ -49,3 +52,8 @@ body {
 .nav-links a:hover {
   color: crimson;
 }
+
+.navbar, .nav-logo, .nav-links a {
+  font-family: 'Oswald', sans-serif;
+}
+
