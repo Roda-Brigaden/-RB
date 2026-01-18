@@ -4,101 +4,143 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Röda Brigaden</title>
-  
-  <!-- CSS direkt i filen -->
+
+  <!-- Google Font Oswald -->
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
-    /* Grundinställningar */
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #111; /* Mörk bakgrund */
+      font-family: 'Oswald', sans-serif;
+      background-color: #111;
       color: white;
     }
 
     /* NAVBAR */
     .navbar {
-      background-color: black;
+      background: rgba(0,0,0,0.85); /* mörk semi-transparent bakgrund */
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 15px 40px;
+      padding: 12px 36px;
+      position: sticky;
+      top: 0;
+      z-index: 999;
     }
 
+    /* Logga + text */
     .nav-logo {
       display: flex;
       align-items: center;
-      gap: 10px; /* Avstånd mellan text och logga */
-      font-size: 20px;
-      font-weight: bold;
-      letter-spacing: 2px;
+      gap: 12px;
     }
-
     .nav-logo span {
-      color: crimson; /* Röd text */
+      color: crimson;
+      font-size: 26px;
+      font-weight: 700;
     }
-
     .nav-logo img {
-      height: 40px; /* Storlek på logga */
+      height: 70px;
       width: auto;
     }
 
+    /* Menylänkar */
     .nav-links {
-      list-style: none;
       display: flex;
-      gap: 25px;
+      gap: 24px;
+      list-style: none;
       margin: 0;
       padding: 0;
     }
-
+    .nav-links li {
+      position: relative;
+    }
     .nav-links a {
       color: white;
       text-decoration: none;
-      font-size: 15px;
+      font-size: 16px;
+      padding: 6px 12px;
+      border-radius: 4px;
+      transition: background 0.2s, color 0.2s;
     }
-
     .nav-links a:hover {
-      color: crimson; /* Röd hover-effekt */
+      background-color: crimson;
+      color: white;
+    }
+    .nav-links a.active {
+      background-color: crimson;
+      color: white;
     }
 
-    /* Huvudinnehåll */
-    main {
-      padding: 40px;
+    /* Hamburger för mobil */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+    .hamburger div {
+      width: 26px;
+      height: 3px;
+      background: white;
+      transition: 0.3s;
     }
 
-    main h1 {
-      font-size: 36px;
-      margin-bottom: 20px;
+    /* Mobilvy */
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        top: 65px;
+        right: 0;
+        background: rgba(0,0,0,0.95);
+        flex-direction: column;
+        gap: 16px;
+        padding: 12px 24px;
+        display: none;
+      }
+      .nav-links.open {
+        display: flex;
+      }
+      .hamburger {
+        display: flex;
+      }
     }
 
-    main p {
-      font-size: 18px;
-      line-height: 1.5;
-    }
   </style>
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
   <nav class="navbar">
     <div class="nav-logo">
       <span>RÖDA BRIGADEN</span>
       <img src="logo.jpg" alt="Röda Brigaden logotyp">
     </div>
 
-    <ul class="nav-links">
-      <li><a href="index.html">Hem</a></li>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="active">Hem</a></li>
       <li><a href="om-oss.html">Om oss</a></li>
       <li><a href="#news">Nyheter</a></li>
       <li><a href="kontakt.html">Kontakt</a></li>
     </ul>
   </nav>
 
-  <!-- Huvudinnehåll -->
-  <main>
+  <main style="padding: 40px;">
     <h1>Hej!</h1>
     <p>Detta är Röda Brigadens officiella hemsida.</p>
   </main>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("open");
+    }
+  </script>
 
 </body>
 </html>
