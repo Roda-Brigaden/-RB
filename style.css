@@ -15,9 +15,10 @@ body {
 }
 
 .nav-logo {
-  font-size: 20px;
-  font-weight: bold;
-  letter-spacing: 2px;
+<div class="nav-logo">
+  <span>RÖDA BRIGADEN</span>
+  <img src="LOGA.jpg" alt="Röda Brigaden logotyp">
+</div>
 }
 
 .nav-links {
