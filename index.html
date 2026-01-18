@@ -143,4 +143,61 @@
   </script>
 
 </body>
+
+<main>
+  <!-- HERO-SEKTION MED BILD -->
+  <section class="hero">
+    <div class="hero-overlay">
+      <h1>Välkommen till Röda Brigaden</h1>
+      <p>Officiell hemsida för vår grupp</p>
+    </div>
+  </section>
+
+  <section style="padding: 40px; max-width: 1000px; margin: auto;">
+    <h2>Om oss</h2>
+    <p>Röda Brigaden är en passionerad grupp som fokuserar på … (beskrivning här)</p>
+  </section>
+</main>
+
+<style>
+  /* HERO-SEKTION */
+  .hero {
+    position: relative;
+    height: 80vh; /* Täcker 80% av skärmen */
+    background: url('gruppfoto1.jpg') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
+  .hero-overlay {
+    background: rgba(0,0,0,0.5); /* mörk overlay så texten syns */
+    padding: 30px 50px;
+    text-align: center;
+    border-radius: 8px;
+  }
+  .hero h1 {
+    font-size: 48px;
+    margin: 0 0 10px 0;
+    color: crimson;
+  }
+  .hero p {
+    font-size: 20px;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 32px;
+    }
+    .hero p {
+      font-size: 16px;
+    }
+    .hero-overlay {
+      padding: 20px 30px;
+    }
+  }
+</style>
+
+  
 </html>
