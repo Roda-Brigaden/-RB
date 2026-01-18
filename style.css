@@ -15,10 +15,21 @@ body {
 }
 
 .nav-logo {
-<div class="nav-logo">
-  <span>RÖDA BRIGADEN</span>
-  <img src="logo.jpg" alt="Röda Brigaden logotyp">
-</div>
+  display: flex;
+  align-items: center;
+  gap: 10px; /* avstånd mellan text och logga */
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.nav-logo span {
+  color: crimson; /* Röd text */
+}
+
+.nav-logo img {
+  height: 40px; /* Anpassa storlek på logga */
+  width: auto;
 }
 
 .nav-links {
