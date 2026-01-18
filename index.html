@@ -9,16 +9,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
+    /* GLOBALT */
     body {
       margin: 0;
       font-family: 'Oswald', sans-serif;
       background-color: #111;
       color: white;
     }
+    a { text-decoration: none; }
 
     /* NAVBAR */
     .navbar {
-      background: rgba(0,0,0,0.85); /* mörk semi-transparent bakgrund */
+      background: rgba(0,0,0,0.9);
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -28,7 +30,6 @@
       z-index: 999;
     }
 
-    /* Logga + text */
     .nav-logo {
       display: flex;
       align-items: center;
@@ -40,11 +41,10 @@
       font-weight: 700;
     }
     .nav-logo img {
-      height: 70px;
+      height: 50px;
       width: auto;
     }
 
-    /* Menylänkar */
     .nav-links {
       display: flex;
       gap: 24px;
@@ -52,27 +52,21 @@
       margin: 0;
       padding: 0;
     }
-    .nav-links li {
-      position: relative;
-    }
+    .nav-links li { position: relative; }
     .nav-links a {
       color: white;
-      text-decoration: none;
       font-size: 16px;
       padding: 6px 12px;
       border-radius: 4px;
       transition: background 0.2s, color 0.2s;
     }
-    .nav-links a:hover {
-      background-color: crimson;
-      color: white;
-    }
+    .nav-links a:hover,
     .nav-links a.active {
       background-color: crimson;
       color: white;
     }
 
-    /* Hamburger för mobil */
+    /* Hamburger */
     .hamburger {
       display: none;
       flex-direction: column;
@@ -86,7 +80,6 @@
       transition: 0.3s;
     }
 
-    /* Mobilvy */
     @media (max-width: 768px) {
       .nav-links {
         position: absolute;
@@ -98,19 +91,68 @@
         padding: 12px 24px;
         display: none;
       }
-      .nav-links.open {
-        display: flex;
-      }
-      .hamburger {
-        display: flex;
-      }
+      .nav-links.open { display: flex; }
+      .hamburger { display: flex; }
     }
 
+    /* HERO-SEKTION */
+    .hero {
+      position: relative;
+      height: 80vh;
+      background: url('8d17e7c6-93dc-4459-ab77-26ef21f4144f.png') center/cover no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+    }
+    .hero-overlay {
+      background: rgba(0,0,0,0.6);
+      padding: 30px 50px;
+      text-align: center;
+      border-radius: 8px;
+    }
+    .hero h1 {
+      font-size: 48px;
+      margin: 0 0 10px 0;
+      color: crimson;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    .hero p {
+      font-size: 20px;
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 32px; }
+      .hero p { font-size: 16px; }
+      .hero-overlay { padding: 20px 30px; }
+    }
+
+    /* OM OSS-SEKTION */
+    .section-content {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+    }
+    .section-content h2 {
+      font-size: 36px;
+      color: crimson;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .section-content p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
   </style>
 </head>
 
 <body>
 
+  <!-- NAVBAR -->
   <nav class="navbar">
     <div class="nav-logo">
       <span>RÖDA BRIGADEN</span>
@@ -131,9 +173,20 @@
     </ul>
   </nav>
 
-  <main style="padding: 40px;">
-    <h1>Hej!</h1>
-    <p>Detta är Röda Brigadens officiella hemsida.</p>
+  <!-- HERO-SEKTION -->
+  <main>
+    <section class="hero">
+      <div class="hero-overlay">
+        <h1>Välkommen till Röda Brigaden</h1>
+        <p>Officiell hemsida för vår grupp</p>
+      </div>
+    </section>
+
+    <!-- OM OSS -->
+    <section class="section-content">
+      <h2>Om oss</h2>
+      <p>Röda Brigaden är en passionerad grupp med fokus på militär estetik och gemenskap. Vi arbetar med strategier, taktik och utbildning för att stärka vår grupp och engagera våra medlemmar i olika aktiviteter och projekt.</p>
+    </section>
   </main>
 
   <script>
@@ -141,63 +194,5 @@
       document.getElementById("navLinks").classList.toggle("open");
     }
   </script>
-
 </body>
-
-<main>
-  <!-- HERO-SEKTION MED BILD -->
-  <section class="hero">
-    <div class="hero-overlay">
-      <h1>Välkommen till Röda Brigaden</h1>
-      <p>Officiell hemsida för vår grupp</p>
-    </div>
-  </section>
-
-  <section style="padding: 40px; max-width: 1000px; margin: auto;">
-    <h2>Om oss</h2>
-    <p>Röda Brigaden är en passionerad grupp som fokuserar på … (beskrivning här)</p>
-  </section>
-</main>
-
-<style>
-  /* HERO-SEKTION */
-  .hero {
-    position: relative;
-    height: 80vh; /* Täcker 80% av skärmen */
-    background: url('gruppfoto1.jpg') center/cover no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-  }
-  .hero-overlay {
-    background: rgba(0,0,0,0.5); /* mörk overlay så texten syns */
-    padding: 30px 50px;
-    text-align: center;
-    border-radius: 8px;
-  }
-  .hero h1 {
-    font-size: 48px;
-    margin: 0 0 10px 0;
-    color: crimson;
-  }
-  .hero p {
-    font-size: 20px;
-    margin: 0;
-  }
-
-  @media (max-width: 768px) {
-    .hero h1 {
-      font-size: 32px;
-    }
-    .hero p {
-      font-size: 16px;
-    }
-    .hero-overlay {
-      padding: 20px 30px;
-    }
-  }
-</style>
-
-  
 </html>
