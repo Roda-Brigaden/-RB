@@ -1,13 +1,99 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="sv">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Röda Brigaden</title>
-    <body>
-      <h1>Media</h1>
-      <p>Här hittar du Bilder, Filmer och andra former av media som ägs av Röda Brigaden!.</p>
-    <a href="index.html">Hem</a>
-    <a href="kontakt.html">Kontakt</a>
-    </body>
-  </head>
+<head>
+    <meta charset="UTF-8">
+    <title>RB Media</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, Helvetica, sans-serif;
+            overflow-x: hidden;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 40px 0;
+            letter-spacing: 2px;
+        }
+
+        .media-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 40px;
+        }
+
+        .media-item {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #222;
+        }
+
+        .media-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%);
+            transition: transform 0.4s ease, filter 0.4s ease;
+        }
+
+        .media-item:hover img {
+            transform: scale(1.05);
+            filter: grayscale(0%);
+        }
+
+        .media-item span {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 10px;
+            background: rgba(0,0,0,0.7);
+            font-size: 14px;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            .media-container {
+                padding: 20px;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>MEDIA</h1>
+
+    <div class="media-container">
+
+        <div class="media-item">
+            <img src="media/bild1.jpg" alt="Media 1">
+            <span>Beskrivning 1</span>
+        </div>
+
+        <div class="media-item">
+            <img src="media/bild2.jpg" alt="Media 2">
+            <span>Beskrivning 2</span>
+        </div>
+
+        <div class="media-item">
+            <img src="media/bild3.jpg" alt="Media 3">
+            <span>Beskrivning 3</span>
+        </div>
+
+        <div class="media-item">
+            <img src="media/bild4.jpg" alt="Media 4">
+            <span>Beskrivning 4</span>
+        </div>
+
+    </div>
+
+</body>
+</html>
