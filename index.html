@@ -7,7 +7,7 @@
 <title>Röda Brigaden</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
-<link rel="icon" href="favicon.png">
+<link rel="icon" type="image/png" href="favicon.png">
 
 <style>
 
@@ -19,109 +19,73 @@ scroll-behavior:smooth;
 body{
 margin:0;
 font-family:'Oswald', sans-serif;
-background:#050505;
 color:white;
-overflow-x:hidden;
+background:black;
 }
 
-/* 🔥 LOADING SCREEN */
-#loader{
-position:fixed;
-width:100%;
-height:100%;
-background:#000;
-display:flex;
-justify-content:center;
-align-items:center;
-z-index:9999;
-flex-direction:column;
-}
+/* NAVBAR */
 
-.loader-logo{
-font-size:38px;
-color:crimson;
-letter-spacing:3px;
-animation:pulse 1.2s infinite;
-}
-
-@keyframes pulse{
-0%{opacity:0.4;}
-50%{opacity:1;}
-100%{opacity:0.4;}
-}
-
-/* 🔥 NAVBAR */
 .navbar{
-
 position:fixed;
 width:100%;
+top:0;
 
 display:flex;
 justify-content:space-between;
 align-items:center;
 
-padding:18px 60px;
+padding:22px 60px;
+transition:.35s;
 
-background:linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)),
-url('background.jpg') center/cover no-repeat;
-
-backdrop-filter:blur(6px);
-
+background:transparent;
 z-index:999;
-transition:.4s;
 }
 
-/* shrink on scroll */
 .navbar.scrolled{
-padding:10px 60px;
-background:rgba(0,0,0,.95);
+background:rgba(0,0,0,.92);
+padding:14px 60px;
 }
 
-/* LOGO */
-.nav-logo{
-display:flex;
-align-items:center;
-gap:14px;
-}
+/* TEXT LOGO */
 
-.nav-logo span{
+.nav-title{
 color:crimson;
 font-size:30px;
 font-weight:700;
-}
-
-.nav-logo img{
-height:65px;
+letter-spacing:2px;
 }
 
 /* LINKS */
+
 .nav-links{
 display:flex;
-gap:28px;
+gap:32px;
 list-style:none;
 }
 
 .nav-links a{
 color:white;
 font-size:17px;
-padding:8px 14px;
-border-radius:6px;
+padding:6px 10px;
+border-radius:4px;
 transition:.25s;
 }
 
 .nav-links a:hover{
-background:crimson;
-box-shadow:0 0 15px crimson;
+color:crimson;
 }
 
-/* HERO */
+/* HERO — FILMISK */
+
 .hero{
 
 height:100vh;
 
 background:
-linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.85)),
-url('background.jpg') center/cover fixed;
+linear-gradient(to bottom,
+rgba(0,0,0,.35),
+rgba(0,0,0,.75)),
+url('background.jpg') center/cover no-repeat;
 
 display:flex;
 justify-content:center;
@@ -129,73 +93,80 @@ align-items:center;
 text-align:center;
 }
 
-.hero-content{
-max-width:900px;
-animation:fadeUp 1.4s ease;
+.hero-overlay{
+padding:40px;
 }
 
+/* DIN GIF — orörd */
+
+.hero-overlay img{
+width:55vw;
+min-width:330px;
+margin-bottom:20px;
+}
+
+/* PROPAGANDA / SPECIAL FORCE TEXT */
+
 .hero h1{
-font-size:70px;
-margin-bottom:10px;
+font-size:64px;
+margin:10px 0;
+letter-spacing:4px;
 color:crimson;
-letter-spacing:3px;
+text-transform:uppercase;
 }
 
 .hero p{
-font-size:24px;
+font-size:22px;
 opacity:.9;
 }
 
-/* scroll fade */
-.fade{
-opacity:0;
-transform:translateY(40px);
-transition:1s;
-}
+/* SECTION */
 
-.fade.show{
-opacity:1;
-transform:translateY(0);
-}
-
-.section{
+.section-content{
 padding:120px 20px;
-max-width:1100px;
+max-width:1000px;
 margin:auto;
 text-align:center;
 }
 
-.section h2{
-font-size:40px;
+.section-content h2{
+font-size:38px;
 color:crimson;
 margin-bottom:20px;
+letter-spacing:1px;
 }
 
-.section p{
-font-size:19px;
-line-height:1.8;
+.section-content p{
+font-size:18px;
+line-height:1.7;
 }
 
-/* animations */
-@keyframes fadeUp{
-from{
-opacity:0;
-transform:translateY(60px);
+/* SCROLL PIL */
+
+.scroll-indicator{
+position:absolute;
+bottom:35px;
+left:50%;
+transform:translateX(-50%);
+font-size:28px;
+opacity:.8;
+animation:bounce 1.6s infinite;
 }
-to{
-opacity:1;
-transform:translateY(0);
-}
+
+@keyframes bounce{
+0%,100%{transform:translate(-50%,0);}
+50%{transform:translate(-50%,8px);}
 }
 
 /* MOBILE */
+
 @media(max-width:768px){
 
 .navbar{
-padding:16px 20px;
+padding:18px 20px;
 }
 
-.nav-logo span{
+.nav-title{
 font-size:22px;
 }
 
@@ -207,6 +178,10 @@ font-size:42px;
 font-size:18px;
 }
 
+.hero-overlay img{
+width:80vw;
+}
+
 }
 
 </style>
@@ -214,91 +189,74 @@ font-size:18px;
 
 <body>
 
-<!-- LOADER -->
-<div id="loader">
-<div class="loader-logo">RÖDA BRIGADEN</div>
-</div>
-
 <!-- NAVBAR -->
+
 <nav class="navbar" id="navbar">
 
-<div class="nav-logo">
-<span>RÖDA BRIGADEN</span>
-<img src="logo.jpg">
+<div class="nav-title">
+RÖDA BRIGADEN
 </div>
 
 <ul class="nav-links">
-<li><a href="#">Hem</a></li>
+<li><a href="index.html">Hem</a></li>
 <li><a href="media.html">Media</a></li>
-<li><a href="#">Nyheter</a></li>
+<li><a href="#news">Nyheter</a></li>
 <li><a href="kontakt.html">Kontakt</a></li>
 </ul>
 
 </nav>
 
+
 <!-- HERO -->
+
 <section class="hero">
 
-<div class="hero-content">
+<div class="hero-overlay">
 
-<h1>RÖDA BRIGADEN</h1>
+<!-- DIN GIF -->
+<img src="glitch_effect (1).gif" alt="Röda Brigaden">
 
-<p>En organiserad gemenskap.  
-En organiserad kamp.  
-En organisation.</p>
+<h1>Välkommen till Röda Brigaden</h1>
 
+<p>Den officiella hemsidan för Röda Brigaden verksamhet</p>
+
+</div>
+
+<div class="scroll-indicator">
+↓
 </div>
 
 </section>
 
-<!-- OM OSS -->
-<section class="section fade">
 
-<h2>Om vår verksamhet</h2>
+<!-- OM OSS — ORÖRD TEXT -->
+
+<section class="section-content">
+<h2>Om Våran verksamhet och organisation!</h2>
 
 <p>
-Röda Brigaden grundades den 27 juli 2025 med målet att skapa en stark,
-disciplinerad och enad organisation.
+Röda Brigaden grundades den 27 juli 2025 av medlemmar med bakgrund i flera autonoma organisationer. Vårt mål var enkelt men kompromisslöst: att bygga en organisation för alla där alla står för alla.
 
-Trots motstånd fortsätter vi framåt med en tydlig vision —
-att bygga något större än individen.
+Det som skiljer oss från andra är vårt starka fokus på gemenskap och disciplin. Trots hot, utpressning och ständig motvind har vi aldrig tappat motivationen eller tron på vår sak. Vi möts ofta av kritik från andra organisationer som ifrågasätter våra metoder och vår rätt att existera men vi låter oss inte tystas.
+
+En organiserad gemenskap, En organiserad Kamp, En organisation.
 </p>
-
 </section>
+
 
 <script>
 
-/* LOADING */
-window.addEventListener("load", ()=>{
+/* NAVBAR SCROLL */
 
-document.getElementById("loader").style.display="none";
-
-});
-
-/* navbar shrink */
 window.addEventListener("scroll",()=>{
 
 const nav=document.getElementById("navbar");
 
-nav.classList.toggle("scrolled",window.scrollY>50);
+nav.classList.toggle("scrolled",window.scrollY>40);
 
-});
-
-/* fade in on scroll */
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add("show");
-}
-});
-});
-
-document.querySelectorAll(".fade").forEach(el=>{
-observer.observe(el);
 });
 
 </script>
 
 </body>
 </html>
-
