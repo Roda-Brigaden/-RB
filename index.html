@@ -12,6 +12,7 @@
 <style>
 
 /* GLOBAL */
+
 html{
 scroll-behavior:smooth;
 }
@@ -42,11 +43,9 @@ z-index:999;
 }
 
 .navbar.scrolled{
-background:rgba(0,0,0,.92);
+background:rgba(0,0,0,.95);
 padding:14px 60px;
 }
-
-/* TEXT LOGO */
 
 .nav-title{
 color:crimson;
@@ -54,8 +53,6 @@ font-size:30px;
 font-weight:700;
 letter-spacing:2px;
 }
-
-/* LINKS */
 
 .nav-links{
 display:flex;
@@ -75,7 +72,7 @@ transition:.25s;
 color:crimson;
 }
 
-/* HERO — FILMISK */
+/* HERO */
 
 .hero{
 
@@ -83,8 +80,8 @@ height:100vh;
 
 background:
 linear-gradient(to bottom,
-rgba(0,0,0,.35),
-rgba(0,0,0,.75)),
+rgba(0,0,0,.55),
+rgba(0,0,0,.85)),
 url('background.jpg') center/cover no-repeat;
 
 display:flex;
@@ -97,20 +94,16 @@ text-align:center;
 padding:40px;
 }
 
-/* DIN GIF — orörd */
-
 .hero-overlay img{
 width:55vw;
 min-width:330px;
 margin-bottom:20px;
 }
 
-/* PROPAGANDA / SPECIAL FORCE TEXT */
-
 .hero h1{
-font-size:64px;
+font-size:68px;
 margin:10px 0;
-letter-spacing:4px;
+letter-spacing:5px;
 color:crimson;
 text-transform:uppercase;
 }
@@ -120,10 +113,36 @@ font-size:22px;
 opacity:.9;
 }
 
-/* SECTION */
+/* SCROLL INDICATOR */
+
+.scroll-indicator{
+position:absolute;
+bottom:35px;
+left:50%;
+transform:translateX(-50%);
+font-size:28px;
+opacity:.8;
+animation:bounce 1.6s infinite;
+}
+
+@keyframes bounce{
+0%,100%{transform:translate(-50%,0);}
+50%{transform:translate(-50%,8px);}
+}
+
+/* DIVIDER — militär linje */
+
+.divider{
+width:85%;
+height:1px;
+background:rgba(255,255,255,.15);
+margin:80px auto;
+}
+
+/* SECTIONS */
 
 .section-content{
-padding:120px 20px;
+padding:20px 20px 100px;
 max-width:1000px;
 margin:auto;
 text-align:center;
@@ -141,21 +160,52 @@ font-size:18px;
 line-height:1.7;
 }
 
-/* SCROLL PIL */
+/* CITATBLOCK */
 
-.scroll-indicator{
-position:absolute;
-bottom:35px;
-left:50%;
-transform:translateX(-50%);
+.quote{
+max-width:900px;
+margin:120px auto;
+text-align:center;
 font-size:28px;
-opacity:.8;
-animation:bounce 1.6s infinite;
+letter-spacing:2px;
+opacity:.9;
 }
 
-@keyframes bounce{
-0%,100%{transform:translate(-50%,0);}
-50%{transform:translate(-50%,8px);}
+/* REKRYTERING */
+
+.recruit{
+text-align:center;
+padding:120px 20px;
+}
+
+.recruit h2{
+font-size:44px;
+color:crimson;
+letter-spacing:2px;
+margin-bottom:20px;
+}
+
+.recruit p{
+font-size:20px;
+margin-bottom:40px;
+}
+
+.recruit button{
+
+background:transparent;
+border:2px solid crimson;
+color:white;
+
+padding:14px 38px;
+font-size:18px;
+letter-spacing:2px;
+
+cursor:pointer;
+transition:.25s;
+}
+
+.recruit button:hover{
+background:crimson;
 }
 
 /* MOBILE */
@@ -172,10 +222,6 @@ font-size:22px;
 
 .hero h1{
 font-size:42px;
-}
-
-.hero p{
-font-size:18px;
 }
 
 .hero-overlay img{
@@ -213,7 +259,6 @@ RÖDA BRIGADEN
 
 <div class="hero-overlay">
 
-<!-- DIN GIF -->
 <img src="glitch_effect (1).gif" alt="Röda Brigaden">
 
 <h1>Välkommen till Röda Brigaden</h1>
@@ -222,14 +267,15 @@ RÖDA BRIGADEN
 
 </div>
 
-<div class="scroll-indicator">
-↓
-</div>
+<div class="scroll-indicator">↓</div>
 
 </section>
 
 
-<!-- OM OSS — ORÖRD TEXT -->
+<div class="divider"></div>
+
+
+<!-- OM OSS (ORÖRD TEXT) -->
 
 <section class="section-content">
 <h2>Om Våran verksamhet och organisation!</h2>
@@ -244,9 +290,35 @@ En organiserad gemenskap, En organiserad Kamp, En organisation.
 </section>
 
 
-<script>
+<div class="divider"></div>
 
-/* NAVBAR SCROLL */
+
+<!-- CITAT -->
+
+<section class="quote">
+"Styrka genom gemenskap. Disciplin genom organisation."
+</section>
+
+
+<div class="divider"></div>
+
+
+<!-- REKRYTERING -->
+
+<section class="recruit">
+
+<h2>Rekrytering</h2>
+
+<p>Vill du stå med oss när andra tvekar?</p>
+
+<button onclick="location.href='kontakt.html'">
+ANSÖK NU
+</button>
+
+</section>
+
+
+<script>
 
 window.addEventListener("scroll",()=>{
 
