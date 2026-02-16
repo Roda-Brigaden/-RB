@@ -1,13 +1,241 @@
 <!doctype html>
 <html lang="sv">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Röda Brigaden</title>
-    <body>
-      <h1>Kontakt</h1>
-      <p>Det går bra att kontakta oss via vår mail, Kontakt@roda-brigaden.org.</p>
-    <a href="index.html">Hem</a>
-    <a href="om-oss.html">Om oss</a>
-    </body>
-  </head>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Kontakt — Röda Brigaden</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/jpg" href="favicon.jpg">
+
+<style>
+
+/* ===== GLOBAL (kopierat från index) ===== */
+
+html{scroll-behavior:smooth;}
+
+body{
+margin:0;
+font-family:'Oswald', sans-serif;
+color:white;
+background:black;
+}
+
+/* ===== NAVBAR (samma som index) ===== */
+
+.navbar{
+position:fixed;
+width:100%;
+top:0;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:22px 60px;
+transition:.35s;
+background:transparent;
+z-index:999;
+}
+
+.navbar.scrolled{
+background:rgba(0,0,0,.95);
+padding:14px 60px;
+}
+
+.nav-title{
+color:crimson;
+font-size:30px;
+font-weight:700;
+letter-spacing:2px;
+}
+
+.nav-links{
+display:flex;
+gap:32px;
+list-style:none;
+}
+
+.nav-links a{
+color:white;
+font-size:17px;
+padding:6px 10px;
+border-radius:4px;
+transition:.25s;
+}
+
+.nav-links a:hover{color:crimson;}
+
+/* ===== HERO CONTACT ===== */
+
+.contact-hero{
+
+height:70vh;
+
+background:
+linear-gradient(to bottom,
+rgba(0,0,0,.55),
+rgba(0,0,0,.9)),
+url('kontakt-bg.jpg') center/cover no-repeat;
+
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding-top:80px;
+}
+
+.contact-hero h1{
+font-size:64px;
+letter-spacing:5px;
+color:crimson;
+text-transform:uppercase;
+margin:0;
+}
+
+/* ===== DIVIDER ===== */
+
+.divider{
+width:85%;
+height:1px;
+background:rgba(255,255,255,.15);
+margin:80px auto;
+}
+
+/* ===== CONTENT ===== */
+
+.contact-content{
+max-width:900px;
+margin:auto;
+text-align:center;
+padding:20px 20px 120px;
+}
+
+.motivation{
+font-size:20px;
+opacity:.9;
+margin-bottom:60px;
+}
+
+/* ===== BUTTONS ===== */
+
+.contact-buttons{
+display:flex;
+flex-direction:column;
+gap:28px;
+align-items:center;
+}
+
+.contact-buttons button{
+
+background:transparent;
+border:2px solid crimson;
+color:white;
+
+padding:18px 44px;
+font-size:20px;
+letter-spacing:2px;
+
+cursor:pointer;
+transition:.25s;
+min-width:320px;
+}
+
+.contact-buttons button:hover{
+background:crimson;
+}
+
+/* ===== EMAIL ===== */
+
+.email{
+margin-top:80px;
+font-size:18px;
+opacity:.8;
+}
+
+.email a{
+color:white;
+text-decoration:none;
+}
+
+.email a:hover{color:crimson;}
+
+/* ===== MOBILE ===== */
+
+@media(max-width:768px){
+
+.navbar{padding:18px 20px;}
+
+.nav-title{font-size:22px;}
+
+.contact-hero h1{font-size:40px;}
+
+.contact-buttons button{
+min-width:90%;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ===== NAVBAR ===== -->
+
+<nav class="navbar" id="navbar">
+
+<div class="nav-title">RÖDA BRIGADEN</div>
+
+<ul class="nav-links">
+<li><a href="index.html">Hem</a></li>
+<li><a href="media.html">Media</a></li>
+<li><a href="index.html#news">Nyheter</a></li>
+<li><a href="kontakt.html">Kontakt</a></li>
+</ul>
+
+</nav>
+
+
+<!-- ===== HERO ===== -->
+
+<section class="contact-hero">
+<h1>ORGANISERA DIG KAMRAT!</h1>
+</section>
+
+
+<div class="divider"></div>
+
+
+<!-- ===== CONTENT ===== -->
+
+<section class="contact-content">
+
+<p class="motivation">
+Ingen förändring sker av sig själv.  
+Bygg styrka, gemenskap och framtid tillsammans med dina lokala kamrater.
+</p>
+
+<div class="contact-buttons">
+
+<button>STÖDMEDLEM</button>
+
+<button>OFFICIELL MEDLEM</button>
+
+</div>
+
+<div class="email">
+Kontakt: <a href="mailto:dinmail@exempel.se">kontakt@roda-brigaden.org</a>
+</div>
+
+</section>
+
+
+<script>
+window.addEventListener("scroll",()=>{
+const nav=document.getElementById("navbar");
+nav.classList.toggle("scrolled",window.scrollY>40);
+});
+</script>
+
+</body>
+</html>
