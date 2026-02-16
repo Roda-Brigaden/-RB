@@ -11,9 +11,7 @@
 
 <style>
 
-/* ===== GLOBAL ===== */
-
-html{scroll-behavior:smooth;}
+/* ===== BAS (samma som index) ===== */
 
 body{
 margin:0;
@@ -22,7 +20,7 @@ color:white;
 background:black;
 }
 
-/* ===== NAVBAR (identisk med index) ===== */
+/* ===== NAVBAR (oförändrad) ===== */
 
 .navbar{
 position:fixed;
@@ -32,14 +30,8 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:22px 60px;
-transition:.35s;
-background:transparent;
-z-index:999;
-}
-
-.navbar.scrolled{
 background:rgba(0,0,0,.95);
-padding:14px 60px;
+z-index:999;
 }
 
 .nav-title{
@@ -58,129 +50,123 @@ list-style:none;
 .nav-links a{
 color:white;
 font-size:17px;
-padding:6px 10px;
-border-radius:4px;
-transition:.25s;
 text-decoration:none;
 }
 
 .nav-links a:hover{color:crimson;}
 
-/* ===== HERO ===== */
+/* ===== KONTAKT-SEKTION ===== */
 
-.hero{
-height:85vh;
-
-background:
-linear-gradient(to bottom,
-rgba(0,0,0,.55),
-rgba(0,0,0,.9)),
-url('background.jpg') center/cover no-repeat;
-
-display:flex;
-justify-content:center;
-align-items:center;
+.kontakt{
+padding-top:140px;
 text-align:center;
-padding-top:80px;
-}
-
-.hero-inner{
-max-width:900px;
-padding:20px;
-}
-
-.hero h1{
-font-size:64px;
-letter-spacing:5px;
-color:crimson;
-text-transform:uppercase;
-margin:0 0 25px 0;
-}
-
-/* 🔥 LITEN BILD UNDER TEXTEN */
-
-.hero-img{
-display:block;
-margin:0 auto;
-width:260px;
-max-width:70%;
-height:auto;
-border:2px solid crimson;
-}
-
-/* ===== DIVIDER ===== */
-
-.divider{
-width:85%;
-height:1px;
-background:rgba(255,255,255,.15);
-margin:80px auto;
-}
-
-/* ===== CONTENT ===== */
-
-.content{
 max-width:900px;
 margin:auto;
-text-align:center;
-padding:20px 20px 120px;
+}
+
+.kontakt h1{
+font-size:56px;
+color:crimson;
+letter-spacing:4px;
+margin-bottom:20px;
+}
+
+.kontakt-img{
+width:260px;
+max-width:80%;
+margin:20px auto 40px;
+display:block;
+border:2px solid crimson;
 }
 
 .motivation{
 font-size:20px;
+margin-bottom:50px;
 opacity:.9;
-margin-bottom:60px;
 }
 
-/* ===== BUTTONS ===== */
-
-.buttons{
+.knappar{
 display:flex;
 flex-direction:column;
-gap:28px;
+gap:20px;
 align-items:center;
 }
 
-.buttons button{
-
+.knappar button{
 background:transparent;
 border:2px solid crimson;
 color:white;
-
-padding:18px 44px;
-font-size:20px;
+padding:16px 40px;
+font-size:18px;
 letter-spacing:2px;
-
 cursor:pointer;
 transition:.25s;
-min-width:300px;
+min-width:260px;
 }
 
-.buttons button:hover{
+.knappar button:hover{
 background:crimson;
 }
 
-/* ===== EMAIL ===== */
-
-.email{
-margin-top:80px;
+.mail{
+margin-top:60px;
 font-size:18px;
 opacity:.8;
 }
 
-.email a{
+.mail a{
 color:white;
 text-decoration:none;
 }
 
-.email a:hover{color:crimson;}
+.mail a:hover{color:crimson;}
 
-/* ===== MOBILE ===== */
+</style>
+</head>
 
-@media(max-width:768px){
+<body>
 
-.navbar{padding:18px 20px;}
+<!-- NAVBAR -->
 
-.nav-title{font-size:22px;}
+<nav class="navbar">
 
-.hero h1{
+<div class="nav-title">RÖDA BRIGADEN</div>
+
+<ul class="nav-links">
+<li><a href="index.html">Hem</a></li>
+<li><a href="media.html">Media</a></li>
+<li><a href="index.html#news">Nyheter</a></li>
+<li><a href="kontakt.html">Kontakt</a></li>
+</ul>
+
+</nav>
+
+
+<!-- KONTAKT -->
+
+<section class="kontakt">
+
+<h1>ORGANISERA DIG KAMRAT!</h1>
+
+<img src="glitch_effect.gif" alt="" class="kontakt-img">
+
+<p class="motivation">
+Ingen förändring sker av sig själv.  
+Bygg styrka, gemenskap och framtid tillsammans med dina lokala kamrater.
+</p>
+
+<div class="knappar">
+
+<button>STÖDMEDLEM</button>
+<button>OFFICIELL MEDLEM</button>
+
+</div>
+
+<div class="mail">
+Mail: <a href="kontakt@roda-brigaden.org">dinmail@exempel.se</a>
+</div>
+
+</section>
+
+</body>
+</html>
