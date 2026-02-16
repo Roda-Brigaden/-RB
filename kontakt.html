@@ -11,7 +11,7 @@
 
 <style>
 
-/* ===== GLOBAL (kopierat från index) ===== */
+/* ===== GLOBAL ===== */
 
 html{scroll-behavior:smooth;}
 
@@ -22,7 +22,7 @@ color:white;
 background:black;
 }
 
-/* ===== NAVBAR (samma som index) ===== */
+/* ===== NAVBAR (identisk med index) ===== */
 
 .navbar{
 position:fixed;
@@ -61,15 +61,15 @@ font-size:17px;
 padding:6px 10px;
 border-radius:4px;
 transition:.25s;
+text-decoration:none;
 }
 
 .nav-links a:hover{color:crimson;}
 
-/* ===== HERO CONTACT ===== */
+/* ===== HERO ===== */
 
-.contact-hero{
-
-height:70vh;
+.hero{
+height:85vh;
 
 background:
 linear-gradient(to bottom,
@@ -84,12 +84,28 @@ text-align:center;
 padding-top:80px;
 }
 
-.contact-hero h1{
+.hero-inner{
+max-width:900px;
+padding:20px;
+}
+
+.hero h1{
 font-size:64px;
 letter-spacing:5px;
 color:crimson;
 text-transform:uppercase;
-margin:0;
+margin:0 0 25px 0;
+}
+
+/* 🔥 LITEN BILD UNDER TEXTEN */
+
+.hero-img{
+display:block;
+margin:0 auto;
+width:260px;
+max-width:70%;
+height:auto;
+border:2px solid crimson;
 }
 
 /* ===== DIVIDER ===== */
@@ -103,7 +119,7 @@ margin:80px auto;
 
 /* ===== CONTENT ===== */
 
-.contact-content{
+.content{
 max-width:900px;
 margin:auto;
 text-align:center;
@@ -118,14 +134,14 @@ margin-bottom:60px;
 
 /* ===== BUTTONS ===== */
 
-.contact-buttons{
+.buttons{
 display:flex;
 flex-direction:column;
 gap:28px;
 align-items:center;
 }
 
-.contact-buttons button{
+.buttons button{
 
 background:transparent;
 border:2px solid crimson;
@@ -137,10 +153,10 @@ letter-spacing:2px;
 
 cursor:pointer;
 transition:.25s;
-min-width:320px;
+min-width:300px;
 }
 
-.contact-buttons button:hover{
+.buttons button:hover{
 background:crimson;
 }
 
@@ -167,80 +183,4 @@ text-decoration:none;
 
 .nav-title{font-size:22px;}
 
-.contact-hero h1{font-size:40px;}
-
-.contact-buttons button{
-min-width:90%;
-}
-
-}
-
-</style>
-</head>
-
-<body>
-
-<!-- ===== NAVBAR ===== -->
-
-<nav class="navbar" id="navbar">
-
-<div class="nav-title">RÖDA BRIGADEN</div>
-
-<ul class="nav-links">
-<li><a href="index.html">Hem</a></li>
-<li><a href="media.html">Media</a></li>
-<li><a href="index.html#news">Nyheter</a></li>
-<li><a href="kontakt.html">Kontakt</a></li>
-</ul>
-
-</nav>
-
-
-<!-- ===== HERO ===== -->
-
-<section class="contact-hero">
-
-<div class="hero-inner">
-
-<h1>ORGANISERA DIG KAMRAT!</h1>
-
-<img src="glitch_effect.gif" alt="Organisera" class="hero-image">
-
-</div>
-
-</section>
-
-
-<!-- ===== CONTENT ===== -->
-
-<section class="contact-content">
-
-<p class="motivation">
-Ingen förändring sker av sig själv.  
-Bygg styrka, gemenskap och framtid tillsammans med dina lokala kamrater.
-</p>
-
-<div class="contact-buttons">
-
-<button>STÖDMEDLEM</button>
-
-<button>OFFICIELL MEDLEM</button>
-
-</div>
-
-<div class="email">
-Kontakt: <a href="mailto:dinmail@exempel.se">kontakt@roda-brigaden.org</a>
-</div>
-
-</section>
-
-
-<script>
-window.addEventListener("scroll",()=>{
-const nav=document.getElementById("navbar");
-nav.classList.toggle("scrolled",window.scrollY>40);
-});
-</script>
-
-</body>
-</html>
+.hero h1{
