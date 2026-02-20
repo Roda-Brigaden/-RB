@@ -1,323 +1,85 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="sv">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>Röda Brigaden</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
-<link rel="icon" type="image/jpg" href="favicon.jpg">
+<meta charset="UTF-8">
+<title>Nedstängt</title>
 
 <style>
-
-/* GLOBAL */
-
-html{
-scroll-behavior:smooth;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: url("göteborg.jpg") no-repeat center center/cover;
+  height: 100vh;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-body{
-margin:0;
-font-family:'Oswald', sans-serif;
-color:white;
-background:black;
+/* Mörk overlay */
+.overlay {
+  background: rgba(0,0,0,0.75);
+  padding: 50px 30px;
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  max-width: 600px;
 }
 
-/* NAVBAR */
-
-.navbar{
-position:fixed;
-width:100%;
-top:0;
-
-display:flex;
-justify-content:space-between;
-align-items:center;
-
-padding:22px 60px;
-transition:.35s;
-
-background:transparent;
-z-index:999;
+/* Stor rubrik */
+h1 {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+  letter-spacing: 2px;
 }
 
-.navbar.scrolled{
-background:rgba(0,0,0,.95);
-padding:14px 60px;
+/* Datum */
+.date {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  opacity: 0.8;
 }
 
-.nav-title{
-color:crimson;
-font-size:30px;
-font-weight:700;
-letter-spacing:2px;
+/* Motivations / info text */
+p {
+  font-size: 1rem;
+  opacity: 0.85;
+  line-height: 1.5;
 }
 
-.nav-links{
-display:flex;
-gap:32px;
-list-style:none;
+/* "Signal lost" text */
+.signal {
+  margin-top: 30px;
+  font-family: monospace;
+  color: #ff3b3b;
+  animation: blink 1s infinite;
 }
 
-.nav-links a{
-color:white;
-font-size:17px;
-padding:6px 10px;
-border-radius:4px;
-transition:.25s;
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0.2; }
 }
-
-.nav-links a:hover{
-color:crimson;
-}
-
-/* HERO */
-
-.hero{
-
-height:100vh;
-
-background:
-linear-gradient(to bottom,
-rgba(0,0,0,.55),
-rgba(0,0,0,.85)),
-url('background.jpg') center/cover no-repeat;
-
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-}
-
-.hero-overlay{
-padding:40px;
-}
-
-.hero-overlay img{
-width:55vw;
-min-width:330px;
-margin-bottom:20px;
-}
-
-.hero h1{
-font-size:68px;
-margin:10px 0;
-letter-spacing:5px;
-color:crimson;
-text-transform:uppercase;
-}
-
-.hero p{
-font-size:22px;
-opacity:.9;
-}
-
-/* SCROLL INDICATOR */
-
-.scroll-indicator{
-position:absolute;
-bottom:35px;
-left:50%;
-transform:translateX(-50%);
-font-size:28px;
-opacity:.8;
-animation:bounce 1.6s infinite;
-}
-
-@keyframes bounce{
-0%,100%{transform:translate(-50%,0);}
-50%{transform:translate(-50%,8px);}
-}
-
-/* DIVIDER — militär linje */
-
-.divider{
-width:85%;
-height:1px;
-background:rgba(255,255,255,.15);
-margin:80px auto;
-}
-
-/* SECTIONS */
-
-.section-content{
-padding:20px 20px 100px;
-max-width:1000px;
-margin:auto;
-text-align:center;
-}
-
-.section-content h2{
-font-size:38px;
-color:crimson;
-margin-bottom:20px;
-letter-spacing:1px;
-}
-
-.section-content p{
-font-size:18px;
-line-height:1.7;
-}
-
-/* CITATBLOCK */
-
-.quote{
-max-width:900px;
-margin:120px auto;
-text-align:center;
-font-size:28px;
-letter-spacing:2px;
-opacity:.9;
-}
-
-/* REKRYTERING */
-
-.recruit{
-text-align:center;
-padding:120px 20px;
-}
-
-.recruit h2{
-font-size:44px;
-color:crimson;
-letter-spacing:2px;
-margin-bottom:20px;
-}
-
-.recruit p{
-font-size:20px;
-margin-bottom:40px;
-}
-
-.recruit button{
-
-background:transparent;
-border:2px solid crimson;
-color:white;
-
-padding:14px 38px;
-font-size:18px;
-letter-spacing:2px;
-
-cursor:pointer;
-transition:.25s;
-}
-
-.recruit button:hover{
-background:crimson;
-}
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-.navbar{
-padding:18px 20px;
-}
-
-.nav-title{
-font-size:22px;
-}
-
-.hero h1{
-font-size:42px;
-}
-
-.hero-overlay img{
-width:80vw;
-}
-
-}
-
 </style>
-</head>
 
+</head>
 <body>
 
-<!-- NAVBAR -->
+<div class="overlay">
+  <h1>NEDSTÄNGT</h1>
 
-<nav class="navbar" id="navbar">
+  <div class="date">
+    Från och med 20 februari 2026
+  </div>
 
-<div class="nav-title">
-RÖDA BRIGADEN
+  <p>
+    För tillfälligt nedstängd.<br>
+    Sidan kommer att ligga kvar som arkiv.
+  </p>
+
+  <div class="signal">
+    SIGNAL LOST ▮▮▮
+  </div>
 </div>
-
-<ul class="nav-links">
-<li><a href="index.html">Hem</a></li>
-<li><a href="media.html">Media</a></li>
-<li><a href="#news">Nyheter</a></li>
-<li><a href="kontakt.html">Kontakt</a></li>
-</ul>
-
-</nav>
-
-
-<!-- HERO -->
-
-<section class="hero">
-
-<div class="hero-overlay">
-
-<img src="glitch_effect (1).gif" alt="Röda Brigaden">
-
-<h1>Välkommen till Röda Brigaden</h1>
-
-<p>Den officiella hemsidan för Röda Brigaden verksamhet</p>
-
-</div>
-
-<div class="scroll-indicator">↓</div>
-
-</section>
-
-
-<div class="divider"></div>
-
-
-<!-- OM OSS (ORÖRD TEXT) -->
-
-<section class="section-content">
-<h2>Om Våran verksamhet och organisation!</h2>
-
-<p>
-Röda Brigaden grundades den 27 juli 2025 av medlemmar med bakgrund i flera autonoma organisationer. Vårt mål var enkelt men kompromisslöst: att bygga en organisation för alla där alla står för alla.
-
-Det som skiljer oss från andra är vårt starka fokus på gemenskap och disciplin. Trots hot, utpressning och ständig motvind har vi aldrig tappat motivationen eller tron på vår sak. Vi möts ofta av kritik från andra organisationer som ifrågasätter våra metoder och vår rätt att existera men vi låter oss inte tystas.
-
-En organiserad gemenskap, En organiserad Kamp, En organisation.
-</p>
-</section>
-
-
-<div class="divider"></div>
-
-<!-- REKRYTERING -->
-
-<section class="recruit">
-
-<h2>Organisera Dig!</h2>
-
-<p>Borgarna och Fascisterna vill att du ska leva på knän, Ställ dig upp!</p>
-
-<button onclick="location.href='kontakt.html'">
-ANSÖK NU
-</button>
-
-</section>
-
-
-<script>
-
-window.addEventListener("scroll",()=>{
-
-const nav=document.getElementById("navbar");
-
-nav.classList.toggle("scrolled",window.scrollY>40);
-
-});
-
-</script>
 
 </body>
 </html>
